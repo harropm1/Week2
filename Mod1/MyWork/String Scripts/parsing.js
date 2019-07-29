@@ -7,40 +7,60 @@
 
 function parseAndDisplayName(name)
 {
-    let firstName, lastName, middleName;
+    let firstName, lastName, middleName, prefix, suffix;
     let pos1 = name.indexOf(" ");
     let pos2 = name.lastIndexOf(" ");
 
-    // This is what is used if a person only has one name
-    if (pos1 == -1)
+    //if prefixes are Mr. or Dr.
+    if (name.substring(0,3) == "Mr." || name.substring(0,3) == "Dr.")
     {
+        prefix = name.substring(0,3);
+        name = name.substr(4);
         console.log("Name: " + name);
-        console.log("Only Name: " + name);
+        console.log("Prefix: " + prefix);
     }
-    // This is what is used if a person has a first and last name
-    else if (pos2 == pos1)
+    //if prefixes are Miss or Mrs.
+    else if (name.substring(0,4) == "Miss" || name.substring(0,4) == "Mrs.")
     {
-        firstName = name.substring(0, pos1);
-        lastName = name.substring(pos1 + 1);
-        
-        console.log("Name: " + name)
-        console.log("First Name: " + firstName);
-        console.log("Last Name: " + lastName);
+        prefix = name.substring(0,4);
+        name = name.substr(4);
+        console.log("Name: " + name);
+        console.log("Prefix: " + prefix);
+    }
+    //otherwise
+    else 
+    {
+        // This is what is used if a person only has one name
+        if (pos1 == -1)
+        {
+            console.log("Name: " + name);
+            console.log("Only Name: " + name);
+        }
+        // This is what is used if a person has a first and last name
+        else if (pos2 == pos1)
+        {
+            firstName = name.substring(0, pos1);
+            lastName = name.substring(pos1 + 1);
+            
+            console.log("Name: " + name)
+            console.log("First Name: " + firstName);
+            console.log("Last Name: " + lastName);
 
-    }
-    //This is what is used if a person has a first, middle, and last name
-    else
-    {
-        firstName = name.substring(0, pos1);
-        middleName = name.substring(pos1 + 1, pos2)
-        lastName = name.substring(pos2 + 1);  
-        console.log("Name: " + name);
-        console.log("First Name: " + firstName);
-        console.log("Middle Name: " + middleName);
-        console.log("Last Name: " + lastName);
+        }
+        //This is what is used if a person has a first, middle, and last name
+        else
+        {
+            firstName = name.substring(0, pos1);
+            middleName = name.substring(pos1 + 1, pos2)
+            lastName = name.substring(pos2 + 1);  
+            console.log("Name: " + name);
+            console.log("First Name: " + firstName);
+            console.log("Middle Name: " + middleName);
+            console.log("Last Name: " + lastName);
+        }
     }
 }
 
 parseAndDisplayName("Cher");
-parseAndDisplayName("Brenda Kaye");
+parseAndDisplayName("Mrs. Brenda Kaye");
 parseAndDisplayName("Dana Lynn Wyatt");
