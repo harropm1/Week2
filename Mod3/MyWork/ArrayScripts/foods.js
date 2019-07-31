@@ -8,7 +8,7 @@ function getBill(lunch)
 
     for (let i = 0; i < lunch.length; i ++)
     {
-        subtotal = subtotal + lunch[i].price;
+        subtotal += lunch[i].price;
         console.log(lunch[i].item + " $" + lunch[i].price);
     }
     let tax = .08 * subtotal;
