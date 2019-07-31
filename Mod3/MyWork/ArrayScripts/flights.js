@@ -21,8 +21,6 @@ let flightInfo = [
     {flightNumber: "4567", depart: "BDL", arrive: "DEN", time: "6:00", price: 240, day: "MoTuWeThFr"},
     {flightNumber: "7891", depart: "DEN", arrive: "EWR", time: "11:00", price: 350, day: "SuTuThSa"},
     {flightNumber: "7890", depart: "DEN", arrive: "EWR", time: "7:00", price: 360, day: "MoWeFr"}
-   
-    
 ];
 
 //labeling days
