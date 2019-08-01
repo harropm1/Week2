@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <title>ACME Fights</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="display-1 text-center">ACME Flights</h1>
+    </header>
+
+    <main>
+        <!--description of page-->
+        <div class="container">
+
+            <!--form and what the action should be, but test environments don't work-->
+            <!--<form name="carRental" action="#" method="POST">-->
+            <form name="carRental" action="#" method="GET" id="inputForm">
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="depart">Depart from</label>
+                        <select class="form-control" id="depart" name="depart" autofocus>
+                            <option value="LAX" selected>LAX</option>
+                            <option value="LAS">LAS</option>
+                            <option value="EWR">EWR</option>
+                            <option value="MCO">MCO</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="arrive">Arrive</label>
+                        <select class="form-control" id="arrive" name="arrive" autofocus>
+                            <option value="LAX" selected>LAX</option>
+                            <option value="LAS">LAS</option>
+                            <option value="EWR">EWR</option>
+                            <option value="MCO">MCO</option>
+                        </select>
+                    </div>
+                </div>
+                <br />
+                <button type="button" class="btn btn-outline-success" id="findFlight">Let's Fly!</button>
+                <button type="reset" class="btn btn-outline-danger">Reset</button>
+            </form>
+            <hr>
+            <p id="availFlights">Searching for Flights? Enter information above!</p>
+        </div>
+    </main>
+
+    <!--footer-->
+    <hr>
+    <footer class="text-right">
+        <p>All calculations done by Michelle Harrop, and she's bad at flying, so go easy on her.</p>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!--My Scripts-->
+    <script src="scripts/flights.js"></script>
+
+</body>
+
+</html>

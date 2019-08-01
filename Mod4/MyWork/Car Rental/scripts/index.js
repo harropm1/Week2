@@ -2,10 +2,26 @@
 
 //this calculates the price of a rental car by using functions with parameters
 
-//get subtotal of rental with number of days pulled in
-function getRentalSubtotal(numberDays)
+//get subtotal of rental with number of days and car types pulled in
+function getRentalSubtotal(numberDays, carType)
 {
-    let rentalSubtotal = numberDays * 29.99;
+    let rentalSubtotal = 0;
+
+    switch (carType)
+    {
+        case "eco":
+            rentalSubtotal = numberDays * 29.99;
+            break;
+        case "comp":
+            rentalSubtotal = numberDays * 34.99;
+            break;
+        case "int":
+            rentalSubtotal = numberDays * 39.99;
+            break;
+        case "full":
+            rentalSubtotal = numberDays * 44.99
+    }
+    
     return rentalSubtotal;
 }
 
@@ -52,6 +68,7 @@ function getDropOffDate(pickupDate, numberDays)
 window.onload = function()
 {
     //defining variables
+    let carTypeField = document.getElementById("carType");
     let pickupDateField = document.getElementById("pickupDate");
     let numberDaysField = document.getElementById("numberDays");
     let tollTagField = document.getElementById("tollTag");
@@ -66,8 +83,8 @@ window.onload = function()
     const btnCalculate = document.getElementById("estTotalCost");
     btnCalculate.onclick = function()
     {
-        //rental subtotal with parameters passed
-        let rentalSubtotal = getRentalSubtotal(Number(numberDaysField.value));
+        //rental subtotal with a switch to show a price which corresponds to a specific level of car 
+        let rentalSubtotal = getRentalSubtotal(Number(numberDaysField.value), carTypeField.options[carTypeField.selectedIndex].value);
         
         //options subtotal with paremeters passed
         let optionsSubtotal = getOptionsCost(Number(numberDaysField.value), tollTagField.checked, gpsField.checked, roadsideField.checked);
