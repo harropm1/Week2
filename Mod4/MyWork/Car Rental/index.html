@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <title>ACME Car Rental</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="display-1 text-center">ACME Car Rental</h1>
+    </header>
+
+    <main>
+        <!--description of page-->
+        <div class="container">
+
+            <!--form and what the action should be, but test environments don't work-->
+            <!--<form name="carRental" action="#" method="POST">-->
+            <form name="carRental" action="#" method="GET" id="inputForm">
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="pickupDate">Pickup date</label>
+                        <input type="date" class="form-control" id="pickupDate" name="pickupDate"
+                            placeholder="2019-08-01" min="2019-07-01" max="2020-08-31" autofocus>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="numberDays">Number of days</label>
+                        <select class="form-control" id="numberDays" name="numberDays">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                        </select>
+                    </div>
+                </div>
+                <p>Options:</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="tollTag" id="tollTag">
+                    <label class="form-check-label" for="tollTag">
+                        Electronic Toll Tag ($3.95/Day)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="gps" id="gps">
+                    <label class="form-check-label" for="gps">
+                        GPS ($2.95/Day)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="roadside" id="roadside">
+                    <label class="form-check-label" for="roadside">
+                        Roadside Assistance ($2.95/day)
+                    </label>
+                </div>
+                <br />
+                <p>Under 25?</p>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="under25" id="u25No" value="No" checked>
+                    <label class="form-check-label" for="u25No">No</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="under25" id="u25Yes" value="Yes">
+                    <label class="form-check-label" for="u25Yes">Yes</label>
+                </div>
+                <br />
+                <br />
+                <button type="button" class="btn btn-outline-success" id="estTotalCost">Estimate Total Cost</button>
+                <button type="reset" class="btn btn-outline-danger">Reset</button>
+            
+            <hr>
+            <!--form for results-->
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="subtotal">Car Rental Subtotal</label>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                            <input class="form-control" type="text" id="subtotal" name="subtotal" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="optionsCost">Total cost of optional items</label>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                            <input class="form-control" type="text" id="optionsCost" name="optionsCost" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="u25charge">Under 25 Surcharge</label>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                            <input class="form-control" type="text" id="u25charge" name="u25charge" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="finalTotal">Total Due</label>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                            <input class="form-control" type="text" id="finalTotal" name="finalTotal" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="returnDate">Return Date</label>
+                        <input class="form-control" type="text" id="returnDate" name="returnDate" readonly>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!--footer-->
+    <hr>
+    <footer class="text-right">
+        <p>All calculations done by Michelle Harrop, and she's bad at math, so go easy on her.</p>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!--My Scripts-->
+    <script src="scripts/index.js"></script>
+
+</body>
+
+</html>
