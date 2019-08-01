@@ -1,20 +1,14 @@
 "use strict";
 
-//this calculates the price of a given icecream
+//this calculates the price of a given ice cream entirely with annoymous functions.
 
 window.onload = function()
 {
-    let numberScoopsField;
-    let hotFudgeField;
-    let sprinklesField;
-    let whippedCreamField;
-    let outputPriceField;
-
-    numberScoopsField = document.getElementById("numberScoops");
-    hotFudgeField = document.getElementById("hotFudge");
-    sprinklesField = document.getElementById("sprinkles");
-    whippedCreamField = document.getElementById("whippedCream");
-    outputPriceField = document.getElementById("outputPrice");
+    let numberScoopsField = document.getElementById("numberScoops");
+    let hotFudgeField = document.getElementById("hotFudge");
+    let sprinklesField = document.getElementById("sprinkles");
+    let whippedCreamField = document.getElementById("whippedCream");
+    let outputPriceField = document.getElementById("outputPrice");
 
     const btnCalculate = document.getElementById("calculateBtn");
     btnCalculate.onclick = function()
@@ -53,7 +47,7 @@ window.onload = function()
             price += .75
         }
         
-        outputPriceField.value = price;
+        outputPriceField.value = price.toFixed(2);
     }
 }
 
