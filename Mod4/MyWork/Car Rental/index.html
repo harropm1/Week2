@@ -28,9 +28,20 @@
             <form name="carRental" action="#" method="GET" id="inputForm">
                 <div class="form-row">
                     <div class="col-md-6">
+                        <label for="carType">Car Type</label>
+                        <select class="form-control" id="carType" name="carType" autofocus>
+                            <option value="eco" selected>Economy</option>
+                            <option value="comp">Compact</option>
+                            <option value="int">Intermediate</option>
+                            <option value="full">Full Size</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
                         <label for="pickupDate">Pickup date</label>
                         <input type="date" class="form-control" id="pickupDate" name="pickupDate"
-                            placeholder="2019-08-01" min="2019-07-01" max="2020-08-31" autofocus>
+                            placeholder="2019-08-01" min="2019-07-01" max="2020-08-31">
                     </div>
                 </div>
                 <div class="form-row">
@@ -93,9 +104,9 @@
                 <br />
                 <button type="button" class="btn btn-outline-success" id="estTotalCost">Estimate Total Cost</button>
                 <button type="reset" class="btn btn-outline-danger">Reset</button>
-            
-            <hr>
-            <!--form for results-->
+
+                <hr>
+                <!--form for results-->
                 <div class="form-row">
                     <div class="col-md-6">
                         <label for="subtotal">Car Rental Subtotal</label>
